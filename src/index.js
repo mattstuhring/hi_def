@@ -12,26 +12,36 @@ class App extends Component {
     super(props);
 
     this.state = {
-      keyword: '',
-      videos: []
+      videos: [],
+      selectedVideo: null
     };
 
-    YTSearch({key: API_KEY, term: 'soccer'}, (videos) => {
-      this.setState({ videos });
+    this.videoSearch('Manchester United');
+  }
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
 
   render() {
     return (
       <div>
-        <SearchBar />
-        <Video videos={this.state.videos} />
+        <SearchBar onSearchBarInput={this.state.videoSearch} />
+        <Video video={this.state.selectedVideo} />
         <div className="row">
           <div className="page-header col-md-12">
-            <h1>More Videos</h1>
+            <h1>Related Videos</h1>
           </div>
         </div>
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          videos={this.state.videos}
+          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+        />
       </div>
     );
   }

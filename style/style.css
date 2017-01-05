@@ -11,6 +11,6 @@
 }
 
 .thumbnail {
-  max-height: 213px;
+  height: 213px;
   text-overflow: ellipsis;
 }

@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
-  const video = props.videos.map((video) => {
-    return <VideoListItem key={video.etag} video={video} />
+  const videoItems = props.videos.map((video) => {
+    return (
+      <VideoListItem
+        key={video.etag}
+        video={video}
+        onVideoSelect={props.onVideoSelect} 
+      />
+    );
   });
 
   return (
     <div className="row">
       <div className="col-md-12">
-        { video }
+        { videoItems }
       </div>
     </div>
   );
