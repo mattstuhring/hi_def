@@ -13,4 +13,5 @@
 .thumbnail {
   height: 213px;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
