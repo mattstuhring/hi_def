@@ -1,0 +1,16 @@
+.flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-bar {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.thumbnail {
+  max-height: 213px;
+  text-overflow: ellipsis;
+}
