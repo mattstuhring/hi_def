@@ -5,8 +5,6 @@ const Video = (props) => {
     return <div>...Loading</div>;
   }
 
-  console.log(props.video);
-
   const url = `https://www.youtube.com/embed/${props.video.id.videoId}?rel=0&showinfo=0&autohide=1`;
 
   return (

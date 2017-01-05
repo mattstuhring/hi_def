@@ -17,6 +17,7 @@ class App extends Component {
     };
 
     this.videoSearch('Manchester United');
+    this.videoSearch = this.videoSearch.bind(this);
   }
 
   videoSearch(term) {
@@ -31,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar onSearchBarInput={this.state.videoSearch} />
+        <SearchBar onSearchBarInput={this.videoSearch} />
         <Video video={this.state.selectedVideo} />
         <div className="row">
           <div className="page-header col-md-12">
