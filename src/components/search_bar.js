@@ -23,20 +23,18 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <div className="col-md-8 col-md-offset-2 search-bar">
-        <form onSubmit={this.onFormSubmit} className="input-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search for..."
-            value={this.state.term}
-            onChange={this.onInputChange}
-          />
-          <span className="input-group-btn">
-            <button className="btn btn-primary" type="submit">Search!</button>
-          </span>
-        </form>
-      </div>
+      <form onSubmit={this.onFormSubmit} className="input-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search for..."
+          value={this.state.term}
+          onChange={this.onInputChange}
+        />
+        <span className="input-group-btn">
+          <button className="btn btn-primary" type="submit">Search!</button>
+        </span>
+      </form>
     );
   }
 };

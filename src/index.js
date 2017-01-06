@@ -4,6 +4,7 @@ import SearchBar from './components/search_bar';
 import Video from './components/video';
 import VideoList from './components/video_list';
 import YTSearch from 'youtube-api-search';
+import TopNavbar from './components/navbar';
 
 const API_KEY = 'AIzaSyBshkLdJ30M0o9GduqxQ-oSqj2OpFBDFFk';
 
@@ -32,7 +33,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar onSearchBarInput={this.videoSearch} />
+        <TopNavbar onSearchBarInput={this.videoSearch} />
+        {/* <SearchBar onSearchBarInput={this.videoSearch} /> */}
         <Video video={this.state.selectedVideo} />
         <div className="row">
           <div className="page-header col-md-12">
