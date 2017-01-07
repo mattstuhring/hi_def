@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Button, Collapse, Well} from 'react-bootstrap/lib';
+
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -23,18 +25,31 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search for..."
-          value={this.state.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button className="btn btn-primary" type="submit">Search!</button>
-        </span>
-      </form>
+      <div className="container-fluid search-bar">
+        <div className="row search-inline">
+          <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
+            click
+          </Button>
+          <Collapse in={this.state.open}>
+            <div>
+              <Well>
+                <form onSubmit={this.onFormSubmit} className="input-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search for..."
+                    value={this.state.term}
+                    onChange={this.onInputChange}
+                  />
+                  <span className="input-group-btn">
+                    <button className="btn btn-primary" type="submit">Search!</button>
+                  </span>
+                </form>
+              </Well>
+            </div>
+          </Collapse>
+        </div>
+      </div>
     );
   }
 };

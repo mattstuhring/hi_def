@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, FormGroup, FormControl, Button} from 'react-bootstrap/lib';
+import {Navbar, FormGroup, FormControl, Button, Col} from 'react-bootstrap/lib';
 import SearchBar from './search_bar';
 
 const TopNavbar = (props) => {

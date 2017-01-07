@@ -4,7 +4,6 @@ import SearchBar from './components/search_bar';
 import Video from './components/video';
 import VideoList from './components/video_list';
 import YTSearch from 'youtube-api-search';
-import TopNavbar from './components/navbar';
 
 const API_KEY = 'AIzaSyBshkLdJ30M0o9GduqxQ-oSqj2OpFBDFFk';
 
@@ -33,21 +32,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TopNavbar onSearchBarInput={this.videoSearch} />
-        {/* <SearchBar onSearchBarInput={this.videoSearch} /> */}
-        <Video video={this.state.selectedVideo} />
-        <div className="row">
-          <div className="page-header col-md-12">
-            <h1>Related Videos</h1>
+        <SearchBar onSearchBarInput={this.videoSearch} />
+        <div className="box">
+          <Video video={this.state.selectedVideo} />
+          <div className="container">
+            <div className="row">
+              <div className="page-header col-xs-12">
+                <h1>Related Videos</h1>
+              </div>
+            </div>
+            <VideoList
+              videos={this.state.videos}
+              onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+            />
           </div>
         </div>
-        <VideoList
-          videos={this.state.videos}
-          onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-        />
       </div>
     );
   }
 };
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.getElementById('app'));

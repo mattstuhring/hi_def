@@ -1,12 +1,54 @@
-.flex-container {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .thumbnail {
   height: 213px;
   text-overflow: ellipsis;
   cursor: pointer;
+}
+
+.search-bar {
+  height: 0px;
+}
+
+.video-box {
+  background-color: black;
+  background-repeat: no-repeat;
+  padding-bottom: 35%;
+  background-position: center;
+  background-size: cover;
+  background-image: url('./img/astronaut.jpg');
+}
+
+.page-header {
+  margin-top: 0px !important;
+}
+
+.collapse.in {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.collapsing {
+  display: none;
+}
+
+.well {
+  height: 0px !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.search-inline {
+  display: inline-flex;
+  margin-right: 36px !important;
+}
+
+.video-margin {
+  margin-top: 74px !important;
+}
+
+.embed-responsive {
+  box-shadow: 10px 10px 5px rgba(10, 10, 10, 0.46) !important;
+  border: 4px solid lightgray !important;
+  border-radius: 4px;
 }
