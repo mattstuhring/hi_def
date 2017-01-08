@@ -1,5 +1,9 @@
+body {
+  font-family: 'Orbitron', sans-serif !important;
+}
+
 .thumbnail {
-  height: 213px;
+  height: 230px;
   text-overflow: ellipsis;
   cursor: pointer;
 }
@@ -19,6 +23,14 @@
 
 .page-header {
   margin-top: 0px !important;
+}
+
+.page-header h1 {
+  color: turquoise;
+}
+
+.caption {
+  color: turquoise !important;
 }
 
 .collapse.in {
@@ -80,5 +92,18 @@
 .logo {
   position: relative !important;
   top: -6px !important;
-  margin-left: 15px !important;
+  margin-left: 10px !important;
+}
+
+.thumbnail {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.video-list {
+  background-color: black;
+}
+
+.glyphicon {
+  top: 4px !important;
 }
