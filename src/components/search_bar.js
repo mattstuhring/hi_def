@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Collapse, Well} from 'react-bootstrap/lib';
+import {Button, Collapse, Well, Glyphicon} from 'react-bootstrap/lib';
 
 
 export default class SearchBar extends Component {
@@ -27,8 +27,11 @@ export default class SearchBar extends Component {
     return (
       <div className="container-fluid search-bar">
         <div className="row search-inline">
-          <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
-            click
+          <Button
+            onClick={ ()=> this.setState({ open: !this.state.open })}
+            className="search-btn-globe"
+            >
+            <Glyphicon glyph="globe" className="search-glyph-globe"/>
           </Button>
           <Collapse in={this.state.open}>
             <div>
@@ -42,7 +45,7 @@ export default class SearchBar extends Component {
                     onChange={this.onInputChange}
                   />
                   <span className="input-group-btn">
-                    <button className="btn btn-primary" type="submit">Search!</button>
+                    <button className="btn btn-primary" type="submit"><Glyphicon glyph="search" /></button>
                   </span>
                 </form>
               </Well>
