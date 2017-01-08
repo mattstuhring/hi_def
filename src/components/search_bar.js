@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Collapse, Well, Glyphicon} from 'react-bootstrap/lib';
+import {Button, Collapse, Well, Glyphicon, Image} from 'react-bootstrap/lib';
 
 
 export default class SearchBar extends Component {
@@ -27,6 +27,7 @@ export default class SearchBar extends Component {
     return (
       <div className="container-fluid search-bar">
         <div className="row search-inline">
+          <Image className="logo" src="/style/img/logo.jpg" responsive />
           <Button
             onClick={ ()=> this.setState({ open: !this.state.open })}
             className="search-btn-globe"

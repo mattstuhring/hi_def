@@ -41,7 +41,7 @@
 
 .search-inline {
   display: inline-flex;
-  margin-right: 54px !important;
+  margin-right: 210px !important;
 }
 
 .video-margin {
@@ -75,4 +75,10 @@
 
 .btn:focus,.btn:active {
    outline: none !important;
+}
+
+.logo {
+  position: relative !important;
+  top: -6px !important;
+  margin-left: 15px !important;
 }
