@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import Header from './components/header';
 import SearchBar from './components/search_bar';
@@ -14,20 +15,51 @@ class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      pageToken: '',
+      term: ''
     };
 
     this.videoSearch('Manchester United');
     this.videoSearch = this.videoSearch.bind(this);
+    this.moreVideos = this.moreVideos.bind(this);
   }
 
   videoSearch(term) {
-    YTSearch({key: API_KEY, term: term}, (videos) => {
+    YTSearch({key: API_KEY, term: term}, (data) => {
+      const videos = data.items;
+      const pageToken = data.nextPageToken;
+
       this.setState({
         videos: videos,
-        selectedVideo: videos[0]
+        selectedVideo: videos[0],
+        pageToken: pageToken,
+        term: term
       });
     });
+  }
+
+  moreVideos() {
+    console.log(this.state.term, 'hello');
+    const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
+    const params = {
+      part: 'snippet',
+      maxResults: 12,
+      key: API_KEY,
+      q: this.state.term,
+      pageToken: this.state.pageToken,
+      type: 'video'
+    };
+
+    axios.get(ROOT_URL, { params: params })
+      .then((res) => {
+        console.log(res.data, 'response');
+        this.setState({ videos: res.data.items, pageToken: res.data.nextPageToken });
+      })
+      .catch((err) => {
+        throw err;
+        console.log(err);
+      });
   }
 
   render() {
@@ -36,7 +68,7 @@ class App extends Component {
         <SearchBar onSearchBarInput={this.videoSearch} />
         <Video video={this.state.selectedVideo} />
         <div className="video-list">
-          <Header />
+          <Header nextPage={this.moreVideos} />
           <VideoList
             videos={this.state.videos}
             onVideoSelect={selectedVideo => this.setState({selectedVideo})}
