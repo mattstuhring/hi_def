@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
+import Footer from './components/footer';
 import Header from './components/header';
 import SearchBar from './components/search_bar';
 import Video from './components/video';
@@ -74,6 +75,7 @@ class App extends Component {
             onVideoSelect={selectedVideo => this.setState({selectedVideo})}
           />
         </div>
+        <Footer />
       </div>
     );
   }

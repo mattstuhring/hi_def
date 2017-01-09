@@ -7,7 +7,7 @@ const Header = (props) => {
     <div className="container-fluid">
       <div className="row">
         <div className="page-header col-sm-12">
-          <h2>Related Videos <small><a href="#" onClick={nextPage}>link</a></small></h2>
+          <h2>Related Videos <small><a href="#" onClick={nextPage}> ...more</a></small></h2>
         </div>
       </div>
     </div>

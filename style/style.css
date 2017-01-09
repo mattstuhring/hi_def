@@ -33,6 +33,17 @@ body {
   color: white !important;
 }
 
+.footer {
+  padding: 5px;
+  position: relative;
+  top: 5px;
+  text-align: center;
+}
+
+.footer-background {
+  background-color: lightgray;
+}
+
 .glyphicon {
   top: 4px !important;
 }
@@ -97,7 +108,7 @@ body {
 }
 
 .thumbnail {
-  height: 260px;
+  height: 230px;
   text-overflow: ellipsis;
   cursor: pointer;
   background-color: transparent !important;
@@ -127,9 +138,9 @@ body {
 }
 
 .video-list-padding {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 
 .video-margin {
-  margin-top: 10px !important;
+  margin-top: 15px !important;
 }
