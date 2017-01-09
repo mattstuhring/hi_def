@@ -73,7 +73,7 @@ export default class SearchBar extends Component {
                     onChange={this.onInputChange}
                   />
                   <span className="input-group-btn">
-                    <button className="btn btn-primary" type="submit"><Glyphicon glyph="search" /></button>
+                    <button className="btn btn-primary search-btn" type="submit"><Glyphicon glyph="search" /></button>
                   </span>
                 </form>
               </Well>
