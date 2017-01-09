@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/header';
 import SearchBar from './components/search_bar';
 import Video from './components/video';
 import VideoList from './components/video_list';
@@ -33,22 +34,13 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSearchBarInput={this.videoSearch} />
-        <div className="box">
-          <Video video={this.state.selectedVideo} />
-          <div className="container-fluid video-list">
-            <div className="row">
-              <div className="page-header col-xs-12">
-                <h1>Related Videos</h1>
-              </div>
-            </div>
-            <div className="container-fluid">
-              <VideoList
-                videos={this.state.videos}
-                onVideoSelect={selectedVideo => this.setState({selectedVideo})}
-                className="video-list"
-              />
-            </div>
-          </div>
+        <Video video={this.state.selectedVideo} />
+        <div className="video-list">
+          <Header />
+          <VideoList
+            videos={this.state.videos}
+            onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+          />
         </div>
       </div>
     );

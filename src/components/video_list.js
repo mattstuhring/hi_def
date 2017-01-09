@@ -13,9 +13,11 @@ const VideoList = (props) => {
   });
 
   return (
-    <div className="row">
-      <div className="col-md-12">
-        { videoItems }
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-sm-12 video-list-padding">
+          { videoItems }
+        </div>
       </div>
     </div>
   );
