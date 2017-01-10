@@ -41,7 +41,6 @@ class App extends Component {
   }
 
   moreVideos() {
-    console.log(this.state.term, 'hello');
     const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
     const params = {
       part: 'snippet',
@@ -54,12 +53,10 @@ class App extends Component {
 
     axios.get(ROOT_URL, { params: params })
       .then((res) => {
-        console.log(res.data, 'response');
         this.setState({ videos: res.data.items, pageToken: res.data.nextPageToken });
       })
       .catch((err) => {
         throw err;
-        console.log(err);
       });
   }
 
