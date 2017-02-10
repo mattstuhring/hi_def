@@ -40,5 +40,7 @@
     "redux": "^3.0.4",
     "youtube-api-search": "0.0.5"
   },
-  "engine": "v7.0.0"
+  "engines": {
+    "node": "v7.0.0"
+  }
 }
