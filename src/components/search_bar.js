@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Button, Collapse, Well, Glyphicon, Image, Col} from 'react-bootstrap/lib';
-import classNames from 'classnames';
 
 export default class SearchBar extends Component {
   constructor(props) {
