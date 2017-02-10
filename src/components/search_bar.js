@@ -25,36 +25,6 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      // <div className="container-fluid search-bar">
-      //   <div className="row search-inline">
-      //     <Image className="logo" src="/style/img/logo.jpg" responsive />
-      //     <Button
-      //       onClick={ ()=> this.setState({ open: !this.state.open })}
-      //       className="search-btn-globe"
-      //     >
-      //       <Glyphicon glyph="globe" className="search-glyph-globe"/>
-      //     </Button>
-      //     <Collapse in={this.state.open}>
-      //       <div>
-      //         <Well>
-      //           <form onSubmit={this.onFormSubmit} className="input-group">
-      //             <input
-      //               type="text"
-      //               className="form-control"
-      //               placeholder="Search for..."
-      //               value={this.state.term}
-      //               onChange={this.onInputChange}
-      //             />
-      //             <span className="input-group-btn">
-      //               <button className="btn btn-primary" type="submit"><Glyphicon glyph="search" /></button>
-      //             </span>
-      //           </form>
-      //         </Well>
-      //       </div>
-      //     </Collapse>
-      //   </div>
-      // </div>
-
       <div className="container-fluid search-bar">
         <div className="row">
           <Col xs={2}>
