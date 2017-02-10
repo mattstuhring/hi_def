@@ -27,7 +27,9 @@ class App extends Component {
   }
 
   videoSearch(term) {
+    console.log(term, 'term');
     YTSearch({key: API_KEY, term: term}, (data) => {
+      console.log(data, 'data');
       const videos = data.items;
       const pageToken = data.nextPageToken;
 
