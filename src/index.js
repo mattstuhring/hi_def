@@ -6,7 +6,6 @@ import Header from './components/header';
 import SearchBar from './components/search_bar';
 import Video from './components/video';
 import VideoList from './components/video_list';
-import YTSearch from 'youtube-api-search';
 
 const API_KEY = 'AIzaSyBshkLdJ30M0o9GduqxQ-oSqj2OpFBDFFk';
 
@@ -25,22 +24,6 @@ class App extends Component {
     this.videoSearch = this.videoSearch.bind(this);
     this.moreVideos = this.moreVideos.bind(this);
   }
-
-  // videoSearch(term) {
-  //   YTSearch({key: API_KEY, term: term}, (data) => {
-  //     console.log(data);
-  //     const videos = data.items;
-  //     const initialVideo = data.items[0];
-  //     const pageToken = data.nextPageToken;
-  //
-  //     this.setState({
-  //       videos: videos,
-  //       selectedVideo: initialVideo,
-  //       pageToken: pageToken,
-  //       term: term
-  //     });
-  //   });
-  // }
 
   videoSearch(term) {
     const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
@@ -73,7 +56,6 @@ class App extends Component {
         throw err;
       });
   }
-
 
   moreVideos() {
     const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
