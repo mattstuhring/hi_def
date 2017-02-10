@@ -29,37 +29,38 @@ class App extends Component {
   videoSearch(term) {
     YTSearch({key: API_KEY, term: term}, (data) => {
       const videos = data.items;
+      const initialVideo = data.items[0];
       const pageToken = data.nextPageToken;
 
       this.setState({
         videos: videos,
-        selectedVideo: videos[0],
+        selectedVideo: initialVideo,
         pageToken: pageToken,
         term: term
       });
     });
   }
 
-  // moreVideos() {
-  //   const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
-  //   const params = {
-  //     part: 'snippet',
-  //     maxResults: 12,
-  //     key: API_KEY,
-  //     q: this.state.term,
-  //     pageToken: this.state.pageToken,
-  //     type: 'video'
-  //   };
-  //
-  //   axios.get(ROOT_URL, { params: params })
-  //     .then((res) => {
-  //       this.setState({ videos: res.data.items, pageToken: res.data.nextPageToken });
-  //     })
-  //     .catch((err) => {
-  //       throw err;
-  //       console.log(err);
-  //     });
-  // }
+  moreVideos() {
+    const ROOT_URL = 'https://www.googleapis.com/youtube/v3/search';
+    const params = {
+      part: 'snippet',
+      maxResults: 12,
+      key: API_KEY,
+      q: this.state.term,
+      pageToken: this.state.pageToken,
+      type: 'video'
+    };
+
+    axios.get(ROOT_URL, { params: params })
+      .then((res) => {
+        this.setState({ videos: res.data.items, pageToken: res.data.nextPageToken });
+      })
+      .catch((err) => {
+        throw err;
+        console.log(err);
+      });
+  }
 
   render() {
     return (
