@@ -41,6 +41,6 @@
     "youtube-api-search": "0.0.5"
   },
   "engines": {
-    "node": "v7.0.0"
+    "node": "v7.10.1"
   }
 }
